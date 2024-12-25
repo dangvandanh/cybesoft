@@ -186,42 +186,26 @@ nó bắt buộc phải position là ralative
   height: 0;
   position: absolute; /* nhớ phải kiểm tra có position: relative */
   right: 0;
-  top:0;
+  top: 0;
   transition: all 0.5s;
 }
-.service__card:hover::after{
+.service__card:hover::after {
   height: 100%;
 }
 
-
-
-/* number */
-#number {
-  background-color: gray;
+.slick-dots li button:before {
   color: white;
-  padding: 100px 0;
+  font-size: 15px;
 }
-
-.number__content {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.slick-dots li.slick-active button:before {
+  color: red;
 }
-
-.number__item {
-  text-align: center;
-}
-
-.number__item p:first-child {
-  font-size: 60px;
-}
-
-.number__item p:last-child {
-  color: blue;
-  font-weight: 600;
-}
+/* .slick-dots li.slick-active button:before bấm vào kiểm tra để ghi đè css mặc định của js */
 
 /* BLOG */
+#blog {
+  padding: 50px 0;
+}
 .blog__container {
   padding: 50px 0;
 }
@@ -246,6 +230,7 @@ nó bắt buộc phải position là ralative
 /* BLOG CONTENT sử dụng GRID */
 .blog__content {
   display: grid;
+  gap: 20px;
   /* grid-template-columns: 1fr 1fr 1fr 1fr; */
   grid-template-columns: repeat(4, 1fr);
 }
@@ -268,4 +253,77 @@ nó bắt buộc phải position là ralative
 .blog__item__10 {
   grid-column: 3 / span 2;
   grid-row: 3 / span 2;
+}
+.blog__item {
+  position: relative;
+  /* padding: 10px; */
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #b41044e0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.blog__item:hover .overlay {
+  opacity: 1;
+}
+.overlay__view__image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  cursor: pointer;
+  transform: translateY(20px);
+  transition: all 0.5s;
+}
+.blog__item:hover .overlay__view__image {
+  transform: translateY(0);
+}
+.overlay__content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  transform: translateY(20px);
+  transition: all 0.5s;
+}
+.blog__item:hover .overlay__content {
+  transform: translateY(0);
+}
+.overlay__content p {
+  color: rgb(26, 225, 56);
+  font-size: 1.5rem;
+}
+.overlay__content h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+/* number */
+#number {
+  background-color: gray;
+  color: white;
+  padding: 100px 0;
+}
+
+.number__content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.number__item {
+  text-align: center;
+}
+
+.number__item p:first-child {
+  font-size: 60px;
+}
+
+.number__item p:last-child {
+  color: blue;
+  font-weight: 600;
 }
